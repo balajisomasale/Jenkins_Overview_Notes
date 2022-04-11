@@ -25,6 +25,7 @@ There are three built-in build lifecycles: default, clean and site. The default 
         - Firstly, set global config maven settings and give maven path 
         - give what commands we need to run in goals section ( here, mvn clean test ) 
         - Imp : Give pom.xml file location (Root pom) so that it can read it directly by invoking it
+    
 
 
 
