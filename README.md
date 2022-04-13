@@ -65,9 +65,36 @@ Steps :
 - In Jenkins/Configure - Firstly give  github link here
 - select `GitHub hook trigger for GITScm polling` option
     
-    
-    
-    
+   
+# Run Jenkins Job Periodically
+
+- Read cron jobs and its format to execute it - just use any shell batch script and write cron format command to execute it periodically
+- To check if the output is accurate, there is free cron tab calculator -> https://crontab.guru/
+
+
+# Create Upstream and Downstream Jobs ( IMP )
+
+Upstream - Jobs that needs to be run first 
+Downstream - Jobs that need to be run at last
+
+Ex : Job_1 -> Job_2 -> Job_3 
+It is same like in real Environment: Build -> Test -> Deploy
+
+"Upstream_Downstream_Job_1" is Job 1
+"Upstream_Downstream_Job_2" is Job 2 
+"Upstream_Downstream_Job_3" is Job 3 
+
+Here priority is 1>2>3
+
+So How to create this:
+- Select `Post-build actions` and then select `build other projects`
+- Provide the project that needs to be run next (here proj 2)
+- Likewise, Go to Proj 2 configure and do same and provide proj 3 in post build actions
+- Now, Just execute the proj 1 and see the flow happening in the console ouput from 1 to 2 to 3
+
+![image](https://user-images.githubusercontent.com/35003840/163107982-462e8e7b-c5e2-4fb2-86ce-a2ec3909f38a.png)
+
+
     
     
     
