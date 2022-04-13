@@ -66,10 +66,6 @@ Steps :
 - select `GitHub hook trigger for GITScm polling` option
     
     
-   
-    
-
-    dfsd
     
     
     
