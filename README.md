@@ -62,9 +62,8 @@ How to create Web hook :
 - Make sure you give HTTPS URL itself and not SSL
             
 Steps : 
-- In Jenkins/Configure - Firstly give SSH github link here
-- GitHub hook trigger for GITScm polling
-
+- In Jenkins/Configure - Firstly give  github link here
+- select `GitHub hook trigger for GITScm polling` option
     
     
    
