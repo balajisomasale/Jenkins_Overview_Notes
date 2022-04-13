@@ -59,11 +59,12 @@ How to create Web hook :
             To get the version -> ngrok --version
             To Run the ngrok -> ngrok.exe http 8080
 - Payload URL would look like ->  http://5737-24-114-82-183.ngrok.io/github-webhook/ -> Note we need to add "/github-webhook/" to ngrok url
+- Make sure you give HTTPS URL itself and not SSL
             
 Steps : 
 - In Jenkins/Configure - Firstly give SSH github link here
 - GitHub hook trigger for GITScm polling
-    
+
     
     
    
