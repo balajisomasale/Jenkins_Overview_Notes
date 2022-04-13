@@ -95,9 +95,42 @@ So How to create this:
 ![image](https://user-images.githubusercontent.com/35003840/163107982-462e8e7b-c5e2-4fb2-86ce-a2ec3909f38a.png)
 
 
+# 2 Imp Plugins  - Parameterized Trigger and Build Pipeline View
+
+# Build Pipeline view :
+
+- It helps in creating the pipeline flow and we just need to give the initial job to run
+- We can also use `run` command in the view as shown in below figure
+
+    ![image](https://user-images.githubusercontent.com/35003840/163109428-387895c4-f51b-4c91-9e40-51044e386967.png)
+
     
-    
-    
-    
+# What Is Jenkins Pipeline | Jenkins Pipeline Setup Example With Github | Jenkinsfile For Maven Build 
+
+## Jenkins Pipeline Setup : 
+
+Before starting, there is `Jenkinsfile` where we write the code about the stages and its syntax 
+Go through this link for getting more info https://www.jenkins.io/doc/book/pipeline/jenkinsfile/
+- Create a new project with `Pipeline` as project type instead of Freestyle proj
+- In the Pipeline tab, there are 2 types : `1) Pipeline Script` and `2) Pipeline script from SCM(Github)`
+- there are samples to get started and once we run/build `hello world` sample code -> In the logs, we can the echo message
+   
+    ![image](https://user-images.githubusercontent.com/35003840/163113486-4ff46e2f-ae57-45aa-a31a-e7d3e20b927b.png)
+            
+                pipeline {
+                    agent any
+
+                    stages {
+                        stage('Hello') {
+                            steps {
+                                    echo 'Hello World'
+                                   }
+                            }
+                        }
+                    } 
+            
+
+- We can add multiple stages within one pipeline same like Build->Test->deploy
+
 
 
