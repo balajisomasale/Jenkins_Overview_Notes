@@ -53,6 +53,7 @@ How to create Web hook :
 - Go to your project you want to trigger the alerts and select create webhook
 - Provide Payload URL - here it could be either cloud or ngrok(public address of localhost) But It cant be the local host!
 - If Jenkins is running on localhost, then create ngrok free URL: 
+
         - What is ngrok? - ngrok is cross-platform application that enables developers to expose a local dev server to internet cloud.
         - Commands : 
             To get the version -> ngrok --version
