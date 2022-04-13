@@ -114,10 +114,9 @@ Go through this link for getting more info https://www.jenkins.io/doc/book/pipel
 - Create a new project with `Pipeline` as project type instead of Freestyle proj
 - In the Pipeline tab, there are 2 types : `1) Pipeline Script` and `2) Pipeline script from SCM(Github)`
 - there are samples to get started and once we run/build `hello world` sample code -> In the logs, we can the echo message
-   
-    ![image](https://user-images.githubusercontent.com/35003840/163113486-4ff46e2f-ae57-45aa-a31a-e7d3e20b927b.png)
-            
-                pipeline {
+                     
+                     
+           pipeline {
                     agent any
 
                     stages {
@@ -128,9 +127,34 @@ Go through this link for getting more info https://www.jenkins.io/doc/book/pipel
                             }
                         }
                     } 
+    ![image](https://user-images.githubusercontent.com/35003840/163113486-4ff46e2f-ae57-45aa-a31a-e7d3e20b927b.png)
+            
+                
             
 
 - We can add multiple stages within one pipeline same like Build->Test->deploy
+
+                    
+                    pipeline {
+                            agent any
+
+                            stages {
+                                stage('Build') {
+                                    steps {
+                                        echo 'Build App'
+                                    } }
+                                stage('Test') {
+                                    steps {
+                                        echo 'Test App'
+                                    } }
+                                stage('Deploy') {
+                                    steps {
+                                        echo 'Deploy App'
+                                    } }
+                                }
+                            }
+
+![image](https://user-images.githubusercontent.com/35003840/163118612-1c115c32-6205-4d87-8e34-1ba1d2d6c4c2.png)
 
 
 
