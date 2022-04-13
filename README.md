@@ -34,8 +34,8 @@ There are three built-in build lifecycles: default, clean and site. The default 
 
 There will be so many parameters just like a google form 
 
-    - Dropdown, Boolean, File upload, Password credentials field and other
-    - https://www.baeldung.com/ops/jenkins-parameterized-builds for more info 
+- Dropdown, Boolean, File upload, Password credentials field and other
+- https://www.baeldung.com/ops/jenkins-parameterized-builds for more info 
     
     
 # Automatically Trigger Jenkins Jobs Using Github WebHook
@@ -50,18 +50,18 @@ What is Web Hook?
     We’ll send a POST request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON, x-www-form-urlencoded, etc). 
 
 How to create Web hook : 
-    - Go to your project you want to trigger the alerts and select create webhook
-    - Provide Payload URL - here it could be either cloud or ngrok(public address of localhost) But It cant be the local host!
-    - If Jenkins is running on localhost, then create ngrok free URL: 
+- Go to your project you want to trigger the alerts and select create webhook
+- Provide Payload URL - here it could be either cloud or ngrok(public address of localhost) But It cant be the local host!
+- If Jenkins is running on localhost, then create ngrok free URL: 
         - What is ngrok? - ngrok is cross-platform application that enables developers to expose a local dev server to internet cloud.
         - Commands : 
             To get the version -> ngrok --version
             To Run the ngrok -> ngrok.exe http 8080
-    - Payload URL would look like ->  http://5737-24-114-82-183.ngrok.io/github-webhook/ -> Note we need to add "/github-webhook/" to ngrok url
+- Payload URL would look like ->  http://5737-24-114-82-183.ngrok.io/github-webhook/ -> Note we need to add "/github-webhook/" to ngrok url
             
 Steps : 
-    - In Jenkins/Configure - Firstly give SSH github link here
-    - GitHub hook trigger for GITScm polling
+- In Jenkins/Configure - Firstly give SSH github link here
+- GitHub hook trigger for GITScm polling
     
     
     
