@@ -33,6 +33,7 @@ There are three built-in build lifecycles: default, clean and site. The default 
 # Create Jenkins Job With Parameter
 
 There will be so many parameters just like a google form 
+
     - Dropdown, Boolean, File upload, Password credentials field and other
     - https://www.baeldung.com/ops/jenkins-parameterized-builds for more info 
     
