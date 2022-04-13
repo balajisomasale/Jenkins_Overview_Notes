@@ -9,6 +9,8 @@ Go to jenkins.war folder location and run "java -jar jenkins.war" and go to the 
 If it shows Unsupported Java version, Install it to Java 11 jdk version -> https://www.oracle.com/in/java/technologies/javase-jdk11-downloads.html
 Note: Java 17 is not supported 
 
+# simple and best source for Jenkins
+If any doubts, go to https://www.javatpoint.com/jenkins for more info
 
 4/7 : 
 
@@ -25,8 +27,32 @@ There are three built-in build lifecycles: default, clean and site. The default 
         - Firstly, set global config maven settings and give maven path 
         - give what commands we need to run in goals section ( here, mvn clean test ) 
         - Imp : Give pom.xml file location (Root pom) so that it can read it directly by invoking it
+   
+   
+4/13 
+# Create Jenkins Job With Parameter
+
+There will be so many parameters just like a google form 
+    - Dropdown, Boolean, File upload, Password credentials field and other
+    - https://www.baeldung.com/ops/jenkins-parameterized-builds for more info 
     
+    
+# Automatically Trigger Jenkins Jobs Using Github WebHook
 
+Since Jenkins is CI/CD tool, We need to trigger the jobs automatically - Github Webhook is one of the way! We need to give authentication first and
+we need to give github project link in jenkins inorder to trigger. But before that, we need to configure git.exe in global configuration in Jenkins.
 
+If there is any change (Push/pull - any), It should trigger the Job
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
