@@ -80,9 +80,9 @@ Downstream - Jobs that need to be run at last
 Ex : Job_1 -> Job_2 -> Job_3 
 It is same like in real Environment: Build -> Test -> Deploy
 
-"Upstream_Downstream_Job_1" is Job 1
-"Upstream_Downstream_Job_2" is Job 2 
-"Upstream_Downstream_Job_3" is Job 3 
+- "Upstream_Downstream_Job_1" is Job 1
+- "Upstream_Downstream_Job_2" is Job 2 
+- "Upstream_Downstream_Job_3" is Job 3 
 
 Here priority is 1>2>3
 
