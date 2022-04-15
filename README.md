@@ -95,7 +95,7 @@ So How to create this:
 ![image](https://user-images.githubusercontent.com/35003840/163107982-462e8e7b-c5e2-4fb2-86ce-a2ec3909f38a.png)
 
 
-# 2 Imp Plugins  - Parameterized Trigger and Build Pipeline View
+#### 2 Imp Plugins  - Parameterized Trigger and Build Pipeline View
 
 # Build Pipeline view :
 
@@ -159,13 +159,7 @@ pipeline {
             }
             
         }
-        
-       
-        
-    }
-
-
-
+            }
 ```
           
 ![image](https://user-images.githubusercontent.com/35003840/163118612-1c115c32-6205-4d87-8e34-1ba1d2d6c4c2.png)
@@ -198,13 +192,10 @@ pipeline {
             always{
                 emailext body: 'This is the Body response', subject: 'Pipeline Status', to: 'balajisomasale98@gmail.com'
             }
-            
-        }
-        
-       
-        
+        }        
     }
 
 ```
+- We can Integrate `Pipeline` project type with SCM directly so that first step will be pulling code from SCM ( Github) and then running the stages depending
+  syntax.
 
-fgdfg
