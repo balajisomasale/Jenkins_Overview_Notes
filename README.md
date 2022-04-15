@@ -156,5 +156,40 @@ Go through this link for getting more info https://www.jenkins.io/doc/book/pipel
 
 ![image](https://user-images.githubusercontent.com/35003840/163118612-1c115c32-6205-4d87-8e34-1ba1d2d6c4c2.png)
 
+4/15:
+
+- Using Failures in Jenkinsfile:
+
+                                    pipeline {
+                                            agent any
+
+                                            stages {
+                                                stage('Build') {
+                                                    steps {
+                                                        echo 'Build App'
+                                                    } }
+                                                stage('Test') {
+                                                    steps {
+                                                        echo 'Test App'
+                                                    } }
+                                                stage('Deploy') {
+                                                    steps {
+                                                        echo 'Deploy App'
+                                                    } }
+                                                }
+        
+        
+                                                post {
+                                                    always{
+                                                        emailext body: 'This is the Body response', subject: 'Pipeline Status', to: 'balajisomasale98@gmail.com'
+                                                    }
+
+                                                }
+        
+       
+        
+                                               }
+
+
 
 
