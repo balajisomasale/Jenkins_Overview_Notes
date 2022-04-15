@@ -133,63 +133,78 @@ Go through this link for getting more info https://www.jenkins.io/doc/book/pipel
             
 
 - We can add multiple stages within one pipeline same like Build->Test->deploy
+``` Code
+pipeline {
+    agent any
 
-                    
-                    pipeline {
-                            agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build App'
+            } }
+        stage('Test') {
+            steps {
+                echo 'Test App'
+            } }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy App'
+            } }
+        }
+        
+        
+        post {
+            always{
+                emailext body: 'This is the Body response', subject: 'Pipeline Status', to: 'balajisomasale98@gmail.com'
+            }
+            
+        }
+        
+       
+        
+    }
 
-                            stages {
-                                stage('Build') {
-                                    steps {
-                                        echo 'Build App'
-                                    } }
-                                stage('Test') {
-                                    steps {
-                                        echo 'Test App'
-                                    } }
-                                stage('Deploy') {
-                                    steps {
-                                        echo 'Deploy App'
-                                    } }
-                                }
-                            }
 
+
+```
+          
 ![image](https://user-images.githubusercontent.com/35003840/163118612-1c115c32-6205-4d87-8e34-1ba1d2d6c4c2.png)
 
 4/15:
 
-- Using Failures in Jenkinsfile:
+- Using Failures in Jenkinsfile:                                  
 
-                                    pipeline {
-                                            agent any
+``` Code
+pipeline {
+    agent any
 
-                                            stages {
-                                                stage('Build') {
-                                                    steps {
-                                                        echo 'Build App'
-                                                    } }
-                                                stage('Test') {
-                                                    steps {
-                                                        echo 'Test App'
-                                                    } }
-                                                stage('Deploy') {
-                                                    steps {
-                                                        echo 'Deploy App'
-                                                    } }
-                                                }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build App'
+            } }
+        stage('Test') {
+            steps {
+                echo 'Test App'
+            } }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy App'
+            } }
+        }
         
         
-                                                post {
-                                                    always{
-                                                        emailext body: 'This is the Body response', subject: 'Pipeline Status', to: 'balajisomasale98@gmail.com'
-                                                    }
-
-                                                }
+        post {
+            always{
+                emailext body: 'This is the Body response', subject: 'Pipeline Status', to: 'balajisomasale98@gmail.com'
+            }
+            
+        }
         
        
         
-                                               }
+    }
 
+```
 
-
-
+fgdfg
