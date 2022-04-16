@@ -199,3 +199,5 @@ pipeline {
 - We can Integrate `Pipeline` project type with SCM directly so that first step will be pulling code from SCM ( Github) and then running the stages depending
   syntax.
 
+
+
