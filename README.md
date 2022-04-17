@@ -200,4 +200,16 @@ pipeline {
   syntax.
 
 
+# What is Master-Slave configuration:
 
+In any Real-time application,If there are high number of application, the server will act slower so in order to mitigate this, we create slave so that it doesn’t affect the main one at all - If job 1 is master and job 2 is a job both in master and slave : If the job 2 is executed, then automatically the job 2 from slave is built because of master-slave 
+
+
+Jenkins as a service in windows : we can configure this globally in Jenkins and once we configure it, the only command in Cmd we have to run is “Jenkins.exe start” command to run Jenkins as a service
+Same like the services in task manager - we can start and stop the services in the windows services and mainly Jenkins is and can be acts as a windows service!!
+Extension : Rebuilder - this helps us to use the same parameter(last) to new Jenkins job
+Jenkins CLI - can run the jobs directly from CLI after authentication 
+
+# Docker containers - Jenkins:
+
+### Slack integration with Jenkins
