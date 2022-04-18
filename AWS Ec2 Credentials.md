@@ -4,5 +4,5 @@
 - If you're using the new console, choose Security, and then choose Get Windows Password.
 
 For this, EC2 will definetely change but the username and pwd will be constant 
-Username : Administrator
-Pwd : xIzs4f*NtUIlGEvbohR99)xL6Jq7hNEY
+- Username : Administrator
+- Pwd : xIzs4f*NtUIlGEvbohR99)xL6Jq7hNEY
