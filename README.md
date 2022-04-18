@@ -220,3 +220,37 @@ Jenkins CLI - can run the jobs directly from CLI after authentication
 # Docker containers - Jenkins:
 
 ### Slack integration with Jenkins
+
+
+
+4/17 : 
+
+# Connect Jenkins via AWS Cloud
+
+- Create a EC2 Instance - Unix 16.04 free tier
+- Go to key pair pem file location and give command `$ ssh -i Jenkins-key-Ohio.pem ubuntu@3.22.187.170`
+- Install JDK in this- command : sudo apt search jdk
+- THis command will add repository -> sudo add-apt-repository ppa:openjdk-r/ppa
+- For latest version ->  sudo apt update
+- Install openjdk 8 version -> sudo apt install openjdk-8-jdk -y
+Note: Java jdk 8 and above are accepted and 7 is not compatible anymore
+
+### Installing Jenkins in AWS server:
+- In Linux servers -> https://www.jenkins.io/doc/book/installing/linux/
+- To become root user : sudo -i
+- Follow the steps installation steps in above link
+- TO check if the Jenkins is installed or not -> systemctl status jenkins
+- To check if its enabled -> systemctl is-enabled jenkins -> you should get "Enabled"
+- Command for -> ps -ef | grep jenkins
+- To know the process number java -> ss -tunpl | grep 8080
+
+---------------------- Jenkins authentication page is not reflecting - issue with port
+
+
+
+
+
+Below approach is not recommended - Go to this link to download WAR file -> https://www.jenkins.io/doc/book/installing/war-file/
+- 
+
+
