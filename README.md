@@ -205,8 +205,8 @@ pipeline {
 - If you're using the new console, choose Security, and then choose Get Windows Password.
 
 For this, EC2 will definetely change but the username and pwd will be constant 
-Username : Administrator
-Pwd : xIzs4f*NtUIlGEvbohR99)xL6Jq7hNEY
+- Username : Administrator
+- Pwd : xIzs4f*NtUIlGEvbohR99)xL6Jq7hNEY
 # What is Master-Slave configuration:
 
 In any Real-time application,If there are high number of application, the server will act slower so in order to mitigate this, we create slave so that it doesn’t affect the main one at all - If job 1 is master and job 2 is a job both in master and slave : If the job 2 is executed, then automatically the job 2 from slave is built because of master-slave 
