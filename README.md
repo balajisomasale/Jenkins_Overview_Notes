@@ -199,7 +199,14 @@ pipeline {
 - We can Integrate `Pipeline` project type with SCM directly so that first step will be pulling code from SCM ( Github) and then running the stages depending
   syntax.
 
+### Note: When connecting to AWS Ec2 Instance especially Windows Server(Remote desktop Connection), Everytime you need to give the Ec2 public ipv4 DNS, username and password  - It will found here :
 
+- Open the Amazon EC2 console, and then choose Instances. Select the check box for the instance, and then expand the Actions dropdown list. If you're using the old console, then choose Get Windows Password.
+- If you're using the new console, choose Security, and then choose Get Windows Password.
+
+For this, EC2 will definetely change but the username and pwd will be constant 
+Username : Administrator
+Pwd : xIzs4f*NtUIlGEvbohR99)xL6Jq7hNEY
 # What is Master-Slave configuration:
 
 In any Real-time application,If there are high number of application, the server will act slower so in order to mitigate this, we create slave so that it doesn’t affect the main one at all - If job 1 is master and job 2 is a job both in master and slave : If the job 2 is executed, then automatically the job 2 from slave is built because of master-slave 
