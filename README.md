@@ -2,9 +2,9 @@
 
 
 How to run jenkins after installation ??
-
-Go to jenkins.war folder location and run "java -jar jenkins.war" and go to the URL -> http://localhost:8080/
-
+2 ways to Login into Jenkins - 1. Local Machine 2. AWS Cloud
+- Go to jenkins.war folder location and run "java -jar jenkins.war" and go to the URL -> http://localhost:8080/
+- Go to location of AWS pem instance key pair - `ssh -i Jenkins-key-Ohio.pem ubuntu@3.22.187.170` and to install anything, become root user by `sudo -i`
 
 If it shows Unsupported Java version, Install it to Java 11 jdk version -> https://www.oracle.com/in/java/technologies/javase-jdk11-downloads.html
 Note: Java 17 is not supported 
@@ -95,7 +95,11 @@ So How to create this:
 ![image](https://user-images.githubusercontent.com/35003840/163107982-462e8e7b-c5e2-4fb2-86ce-a2ec3909f38a.png)
 
 
-#### 2 Imp Plugins  - Parameterized Trigger and Build Pipeline View
+#### Imp Plugins   
+- Parameterized Trigger and Build Pipeline View
+
+- ZentimestampVersion - allows the customization of the date and time pattern for the Jenkins BUILD_TIMESTAMP variable
+
 
 # Build Pipeline view :
 
@@ -266,4 +270,13 @@ For the above error -> make sure you have `8080` in your security group in Ec2 i
     echo "The commands of this job are executed from below directory" 
     pwd 
     touch test_jenkins_files{1..20} `
+##### Install Maven in Jenkins
+- Just login into Jenkins in aws with EC2 ipv4 address and become root user `sudo -i` then give `sudo apt install maven`
+
+## Jenkins  AWS Artifact S3 Upload :
+
+- Create a S3 bucket in AWS to upload Files and give access to the user logged in - if not, create a new user with `AmazonS3FullAccess` in the permissions
+- Add S3 plugin in Jenkins - `S3 Publisher`
+- In Manage System Jenkins > Select Amazon S3 profiles and give the access key and pwds we got when S3 was created!!
+- How to link S3 in Jenkins project ? - In post-built actions,select `publish artifacts to S3 bucket`  
 - 
