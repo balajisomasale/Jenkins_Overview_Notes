@@ -261,9 +261,9 @@ For the above error -> make sure you have `8080` in your security group in Ec2 i
 ## Running first job in Jenkins
 - As normal, we can create first job by creating new item `my_first_job` and write any shell command as follows;
 - `echo "Jenkins job is running with the mentioned user below"
-whoami
+    whoami
 
-echo "The commands of this job are executed from below directory" 
-pwd
-touch test_jenkins_files{1..20}`
+    echo "The commands of this job are executed from below directory" 
+    pwd 
+    touch test_jenkins_files{1..20} `
 - 
