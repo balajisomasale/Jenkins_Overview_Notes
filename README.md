@@ -244,13 +244,26 @@ Note: Java jdk 8 and above are accepted and 7 is not compatible anymore
 - Command for -> ps -ef | grep jenkins
 - To know the process number java -> ss -tunpl | grep 8080
 
----------------------- Jenkins authentication page is not reflecting - issue with port
 
+4/24:
+---------------------- Jenkins authentication page is not reflecting - issue with port ---
+For the above error -> make sure you have `8080` in your security group in Ec2 instance
 
+### Jenkins authentication in AWS server
+- Once we go to `http://13.59.192.229:8080` it will redirect to Jenkins authentication homepage 
+- here `http://13.59.192.229` is public ipv4 address of ec2 instance
+- It will ask us to give the password and it will be found in the mentioned directory itself -> Just go to that directory and use `cat` command to access it
+- If permission denied error occurs, then just be the root user `sudo -i`
+- Once setting up the profile, it will ask for url of jenkins -> As EC2 is dynamic ( changes after every restart) -> we should change it manually
+- If we want Static URL address(public ipv4) - then we need to attach `Elastic Ip` and attach to EC2 instance - we didnot do here 
+- Now, `Jenkins is ready and installed`
 
+## Running first job in Jenkins
+- As normal, we can create first job by creating new item `my_first_job` and write any shell command as follows;
+- `echo "Jenkins job is running with the mentioned user below"
+whoami
 
-
-Below approach is not recommended - Go to this link to download WAR file -> https://www.jenkins.io/doc/book/installing/war-file/
+echo "The commands of this job are executed from below directory" 
+pwd
+touch test_jenkins_files{1..20}`
 - 
-
-
