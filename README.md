@@ -270,6 +270,13 @@ For the above error -> make sure you have `8080` in your security group in Ec2 i
     echo "The commands of this job are executed from below directory" 
     pwd 
     touch test_jenkins_files{1..20} `
+
+Creating Build Job in Jenkins: Using Timestamps in the file names
+- The following job copies one file to creating a new file in updating the file name as $BUILD_TIMESTAMP 
+`cp target/vprofile-v2.war target/vprofile-V$BUILD_ID-$BUILD_TIMESTAMP.war `
+
+ ![image](https://user-images.githubusercontent.com/35003840/165002553-abb74fdf-22c7-414e-9f90-15f629af26c7.png)
+
 ##### Install Maven in Jenkins
 - Just login into Jenkins in aws with EC2 ipv4 address and become root user `sudo -i` then give `sudo apt install maven`
 
@@ -279,4 +286,15 @@ For the above error -> make sure you have `8080` in your security group in Ec2 i
 - Add S3 plugin in Jenkins - `S3 Publisher`
 - In Manage System Jenkins > Select Amazon S3 profiles and give the access key and pwds we got when S3 was created!!
 - How to link S3 in Jenkins project ? - In post-built actions,select `publish artifacts to S3 bucket`  
-- 
+- Add the files that needs to be uploaded into AWS - give it in the source field
+- In the Destination bucket, Give the S3 bucket name 
+- Make sure the AWS S3 bucket region,Ec2 instance region and "Jenkins S3 upload region" should be same - here it is "us-east-2"
+![image](https://user-images.githubusercontent.com/35003840/165002473-7f2e3d41-f9e7-4e4b-8cc9-c225597bc25f.png)
+
+Files uploaded in AWS S3 
+
+![image](https://user-images.githubusercontent.com/35003840/165002515-c11d46dd-f1ec-4667-acbf-fff4dcdbb8f2.png)
+
+Job Flow : 
+`Creating files in Jenkins --> Uploading the files to AWS S3 Artifact`
+
