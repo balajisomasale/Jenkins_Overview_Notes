@@ -298,3 +298,4 @@ Files uploaded in AWS S3
 Job Flow : 
 `Creating files in Jenkins --> Uploading the files to AWS S3 Artifact`
 
+Last login : AWS EC2 instance : http://13.59.192.229:8080/
