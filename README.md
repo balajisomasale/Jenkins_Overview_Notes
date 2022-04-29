@@ -358,11 +358,52 @@ Nexus Repository :
 ![image](https://user-images.githubusercontent.com/35003840/165990274-a84dc016-d02c-43f1-9add-d91539aa50b4.png)
 - Keep everything default as we are just creating artifact here - let `Maven2` be same
 - We can see repo here 
+
 ![image](https://user-images.githubusercontent.com/35003840/165990479-c55012ea-5fe8-4d4d-8cd8-d65d0bf991e7.png)
+
+How to copy artifacts from one project to other:
+
+- If there are multiple artifacts, we will be `Archiving` into one
+- Inside `Post-build Actions` select `Archive the Artifacts` - we need to give Regular Expression (REGEX) 
+- `**/*.war` will archive all the files into 1 
+
+![image](https://user-images.githubusercontent.com/35003840/166007375-ec477033-99f3-4e8d-b83c-deee8223a841.png)
+
+- Now, Copying artifacts from Vprofile-build-job to Vprofile0Nexus-Versioning
+
+![image](https://user-images.githubusercontent.com/35003840/166008242-1d87c71c-f567-4148-88d5-7f8f6673afd3.png)
+
+- This Regex `**/*.war` will search for war files in entire source project
+
+![image](https://user-images.githubusercontent.com/35003840/166008453-f4175642-05a6-4782-ad15-642edb511a97.png)
+
 
 ##### Install Nexus in Jenkins:
 
-- Add `Nexus Artifact Uploader` plugin in Jenkins and `Copy artifcat plugin` to copy artifact from one project(workspace) to another
-- 
-- 
+- Add `Nexus Artifact Uploader` plugin in Jenkins to install and integrate with Nexus and `Copy artifcat plugin` to copy artifact from one project(workspace) to another
+-  Imp Note: Jenkins and Nexus are in same VPC and same network - so they can connect to each other - so While configuring, we can give `private ipv4 address of NEXUS` and dont give public IPV4
+
+![image](https://user-images.githubusercontent.com/35003840/166022961-0e34781f-2d3a-479d-ac04-a924654a3ddb.png)
+![image](https://user-images.githubusercontent.com/35003840/166024552-706ec9b5-6322-43b0-a040-ee3f1bc4448a.png)
+
+- As we are connecting Nexus server from Jenkins, In AWS Cloud perspective, In the Nexus security group, we need to allow Jenkins SG as Inbound rule
+
+![image](https://user-images.githubusercontent.com/35003840/166054471-5cd38330-61ec-4970-996f-f046933e6ef1.png)
+
+- The required artifacts ar uploaded in the Nexus server 
+
+jenkins o/p
+![image](https://user-images.githubusercontent.com/35003840/166056936-45bc28d1-d726-4a6c-b495-85bf11dbfde2.png)
+
+Nexus repositories
+
+![image](https://user-images.githubusercontent.com/35003840/166057319-6e703c65-a383-4d2b-99d8-b9ac21fcc025.png)
+
+![image](https://user-images.githubusercontent.com/35003840/166057588-24ef76ca-44aa-4fb2-90e9-9254a6ef410d.png)
+
+
+If there is any problem, like connection timed out -check if you can connect to NEXUS from jenkins
+login to jenkins shell and telnet port 8081 if there is any firewall that is blocking 
+
  
+Similar to Nexus, we have JFROG artifacts 
