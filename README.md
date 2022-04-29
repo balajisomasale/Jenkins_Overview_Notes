@@ -406,4 +406,12 @@ If there is any problem, like connection timed out -check if you can connect to 
 login to jenkins shell and telnet port 8081 if there is any firewall that is blocking 
 
  
-Similar to Nexus, we have JFROG artifacts 
+- Similar to Nexus, we have JFROG artifacts 
+
+--------------
+
+Code Analysis : 
+
+We can use `Checkstyle` plugin to do the code analysis 
+
+
