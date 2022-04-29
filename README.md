@@ -5,6 +5,8 @@ How to run jenkins after installation ??
 2 ways to Login into Jenkins - 1. Local Machine 2. AWS Cloud
 - Go to jenkins.war folder location and run "java -jar jenkins.war" and go to the URL -> http://localhost:8080/
 - Go to location of AWS pem instance key pair - `ssh -i Jenkins-key-Ohio.pem ubuntu@3.22.187.170` and to install anything, become root user by `sudo -i`
+  Note 1: While using AWS, the login page is : public_ipv4_address:8080 -> ex: http://18.188.10.19:8080/ 
+  Note 2: Dont worry about old projects, just login with new ipv4 address for same Ec2 instance, it will automatically reflect in the new one!
 
 If it shows Unsupported Java version, Install it to Java 11 jdk version -> https://www.oracle.com/in/java/technologies/javase-jdk11-downloads.html
 Note: Java 17 is not supported 
@@ -299,3 +301,54 @@ Job Flow :
 `Creating files in Jenkins --> Uploading the files to AWS S3 Artifact`
 
 Last login : AWS EC2 instance : http://13.59.192.229:8080/
+
+4/29:
+What is Artifact in Jenkins?
+
+- The definition of an artifact from Jenkins themselves is: an artifact is an immutable file, generated during a Build or Pipeline run in Jenkins. These artifacts are then archived onto the Jenkins Controller for later use.
+
+### Jenkins Nexus Integration
+
+https://www.sonatype.com/products/nexus-repository
+
+![image](https://user-images.githubusercontent.com/35003840/165964168-16e5fa07-f028-4feb-ae5d-6f89b08f69a2.png)
+
+![image](https://user-images.githubusercontent.com/35003840/165964613-c6149080-8d42-4619-8795-b3b830d0b50d.png)
+
+Flow : Users Code -> Github -> Jenkins -> Nexus repo
+
+![image](https://user-images.githubusercontent.com/35003840/165966228-a6d9e01f-d361-46f7-90b4-fc5f3641e33a.png)
+
+Here, Instead of storing artifact in AWS S3 Bucket, we store the artifacts from jenkins to Nexus Repo
+
+##### How to create Jenkins with Nexus ?
+
+Firstly, we need to create a seperate Nexus Centos server and below are the steps:
+
+- Creating a Centos server in AWS - CentOS 7 (x86_64) - with Updates HVM
+- Create everything as default except the Key pair - Create a new Key pair naming 'Nexus-server' here
+- So Once the EC2 Centos Instance is created, go to `Nexus-Server.pem` key pair directory and login to that
+- command is same : `ssh -i Nexus-Server.pem centos@3.19.213.64` where `Nexus-Server.pem` is the Key pair name and we are using `centos` here
+- To become root user to get all permissions: `sudo -i`
+- ` Dependencies used are Java` - We need to Install Java - JDK or JRE needs to be installed - `yum search jdk` to search
+- We need to install min java 8 version - so look for it - `yum install java-1.8.0-openjdk.x86_64 -y` 
+
+Installing Nexus package: 
+
+- Go to https://help.sonatype.com/repomanager2/download -> we will copy the address of `nexus-2.15.1-02-bundle.tar.gz`
+- Make sure to download only the OSS ( open source ) and not the professional one
+- Inorder to download the URL, we need to have `wget` and to install : `yum install wget -y`
+- To download the URL : `wget https://download.sonatype.com/nexus/oss/nexus-2.15.1-02-bundle.tar.gz`
+- As it is downloaded now, we use `tar -xzvf downloaded_file` to extract it
+-  `[root@ip-172-31-43-200 local]# ls
+bin  games    lib    libexec                        sbin   sonatype-work
+etc  include  lib64  nexus-2.15.1-02-bundle.tar.gz  share  src
+[root@ip-172-31-43-200 local]# tar -xzvf nexus-latest-bundle.tar.gz
+tar (child): nexus-latest-bundle.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[root@ip-172-31-43-200 local]# tar -xzvf nexus-2.15.1-02-bundle.tar.gz
+`
+- 
+ 
