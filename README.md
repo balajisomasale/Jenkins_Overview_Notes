@@ -339,15 +339,30 @@ Installing Nexus package:
 - Make sure to download only the OSS ( open source ) and not the professional one
 - Inorder to download the URL, we need to have `wget` and to install : `yum install wget -y`
 - To download the URL : `wget https://download.sonatype.com/nexus/oss/nexus-2.15.1-02-bundle.tar.gz`
-- As it is downloaded now, we use `tar -xzvf downloaded_file` to extract it
--  `[root@ip-172-31-43-200 local]# ls
-    bin  games    lib    libexec                        sbin   sonatype-work
-    etc  include  lib64  nexus-2.15.1-02-bundle.tar.gz  share  src
-    [root@ip-172-31-43-200 local]# tar -xzvf nexus-latest-bundle.tar.gz
-    tar (child): nexus-latest-bundle.tar.gz: Cannot open: No such file or directory
-    tar (child): Error is not recoverable: exiting now
-    tar: Child returned status 2
-    tar: Error is not recoverable: exiting now
-    [root@ip-172-31-43-200 local]# tar -xzvf nexus-2.15.1-02-bundle.tar.gz`
+- Once it is downloaded, move this file : `mv nexus-professional-2.15.1-02-bundle.tar.gz /usr/local/` and  `cd /usr/local/`
+- We use `tar -xzvf downloaded_file` to extract it : `tar -xzvf nexus-2.15.1-02-bundle.tar.gz`
+- Using `ln` command here : `ln -s nexus-2.15.1-02 nexus`
+  Note : `ln command` means : `ln is a command-line utility for creating links between files. By default, the ln command creates hard links. `
+- Once we run this command, we get bin folder and once we get into that - there is a binary file named `nexus` which is start script
+- To see the webpage, we run this command `bin/nexus start` and we get warning saying to export if its root : `export RUN_AS_USER=root` and try running start again
+- Check for logs : `tail -f logs/wrapper.log` - Jetty-server will be started
+
+###### How to login to Nexus server:
+
+- Public ipv4 address and port number 8081: http://3.19.213.64:8081/nexus/
+- Sign credentials : `admin` and pwd `admin123` which is default - but changed it to `adminbalu`
+
+Nexus Repository : 
+
+- Check Repositories tab in Nexus server and create new one with `hosted repository` as option
+![image](https://user-images.githubusercontent.com/35003840/165990274-a84dc016-d02c-43f1-9add-d91539aa50b4.png)
+- Keep everything default as we are just creating artifact here - let `Maven2` be same
+- We can see repo here 
+![image](https://user-images.githubusercontent.com/35003840/165990479-c55012ea-5fe8-4d4d-8cd8-d65d0bf991e7.png)
+
+##### Install Nexus in Jenkins:
+
+- Add `Nexus Artifact Uploader` plugin in Jenkins and `Copy artifcat plugin` to copy artifact from one project(workspace) to another
+- 
 - 
  
