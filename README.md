@@ -341,14 +341,13 @@ Installing Nexus package:
 - To download the URL : `wget https://download.sonatype.com/nexus/oss/nexus-2.15.1-02-bundle.tar.gz`
 - As it is downloaded now, we use `tar -xzvf downloaded_file` to extract it
 -  `[root@ip-172-31-43-200 local]# ls
-bin  games    lib    libexec                        sbin   sonatype-work
-etc  include  lib64  nexus-2.15.1-02-bundle.tar.gz  share  src
-[root@ip-172-31-43-200 local]# tar -xzvf nexus-latest-bundle.tar.gz
-tar (child): nexus-latest-bundle.tar.gz: Cannot open: No such file or directory
-tar (child): Error is not recoverable: exiting now
-tar: Child returned status 2
-tar: Error is not recoverable: exiting now
-[root@ip-172-31-43-200 local]# tar -xzvf nexus-2.15.1-02-bundle.tar.gz
-`
+    bin  games    lib    libexec                        sbin   sonatype-work
+    etc  include  lib64  nexus-2.15.1-02-bundle.tar.gz  share  src
+    [root@ip-172-31-43-200 local]# tar -xzvf nexus-latest-bundle.tar.gz
+    tar (child): nexus-latest-bundle.tar.gz: Cannot open: No such file or directory
+    tar (child): Error is not recoverable: exiting now
+    tar: Child returned status 2
+    tar: Error is not recoverable: exiting now
+    [root@ip-172-31-43-200 local]# tar -xzvf nexus-2.15.1-02-bundle.tar.gz`
 - 
  
